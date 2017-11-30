@@ -50,6 +50,25 @@ any suggestions would you like added or modified write to us at oasintech@gmail.
     use ODB\DB\Database;
     $db = Database::connect();
 ```
+### step 3 :
+- Initialise flip/whoops error  handler
+```php
+    use Whoops\Handler\PrettyPageHandler;
+use Whoops\Handler\JsonResponseHandler;
+
+$run     = new Whoops\Run;
+$handler = new PrettyPageHandler;
+
+// Set the title of the error page:
+$handler->setPageTitle("Whoops! There was a problem.");
+
+$run->pushHandler($handler);
+if (Whoops\Util\Misc::isAjaxRequest()) {
+  $run->pushHandler(new JsonResponseHandler);
+}
+$run->register();
+
+```
 
 # how it works (methods):
 
