@@ -13,8 +13,11 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
-
+    "require": {
+        "php": "^5.5.9 || ^7.0",
+        "psr/log": "^1.0.1",
+        "filp/whoops": "^2.1"
+    },
     "autoload": {
         "psr-4": {
             "ODB\\DB\\": "ODB"
