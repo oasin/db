@@ -1,0 +1,27 @@
+{
+    "name": "oasin/db",
+    "description": "A database class which uses the PDO extension, Supports many drivers",
+    "type": "class",
+    "license": "MIT",
+    "authors": [{
+            "name": "Kelvin israel",
+            "email": "chinasa.israel@gmail.com"
+        },
+        {
+            "name": "oasintech Team - kelvin israel",
+            "email": "oasintech@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+
+    "autoload": {
+        "psr-4": {
+            "ODB\\DB\\": "ODB"
+        },
+
+        "files": [
+            "Config/config_function.php"
+        ]
+    }
+}
