@@ -63,7 +63,7 @@ trait Query
 
 	public function rawQuery($sql){
 
-		return $this->query($sql,$params);
+		return $this->query($sql);
 	}
 
 	/**
