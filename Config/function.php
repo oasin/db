@@ -5,7 +5,7 @@
  */
 function config($path = '')
 {
-	$config = include(dirname(__FILE__) . '/database_config.php');
+	$config = include(dirname(__FILE__) . '/config.php');
 	if(strpos($path, ".") !== false)
 		$path = explode(".", $path);
 
