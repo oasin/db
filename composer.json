@@ -2,7 +2,7 @@
     "name": "oasin/db",
     "description": "A database class which uses the PDO extension, Supports many drivers",
     "type": "class",
-    "license": "MIT",
+    "license": "APACHE",
     "authors": [{
             "name": "Kelvin israel",
             "email": "chinasa.israel@gmail.com"
