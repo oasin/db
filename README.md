@@ -49,24 +49,25 @@ any suggestions would you like added or modified write to us at oasintech@gmail.
 ```php
     use ODB\DB\Database;
     $db = Database::connect();
+    $db->prefix('tableprefix_');
 ```
 ### step 3 :
 - Initialise flip/whoops error  handler
 ```php
-    use Whoops\Handler\PrettyPageHandler;
-use Whoops\Handler\JsonResponseHandler;
+    	use Whoops\Handler\PrettyPageHandler;
+	use Whoops\Handler\JsonResponseHandler;
 
-$run     = new Whoops\Run;
-$handler = new PrettyPageHandler;
+	$run     = new Whoops\Run;
+	$handler = new PrettyPageHandler;
 
-// Set the title of the error page:
-$handler->setPageTitle("Whoops! There was a problem.");
+	// Set the title of the error page:
+	$handler->setPageTitle("Whoops! There was a problem.");
 
-$run->pushHandler($handler);
-if (Whoops\Util\Misc::isAjaxRequest()) {
-  $run->pushHandler(new JsonResponseHandler);
-}
-$run->register();
+	$run->pushHandler($handler);
+	if (Whoops\Util\Misc::isAjaxRequest()) {
+  		$run->pushHandler(new JsonResponseHandler);
+	}
+	$run->register();
 
 ```
 
