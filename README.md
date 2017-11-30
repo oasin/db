@@ -47,7 +47,7 @@ any suggestions would you like added or modified write to us at oasintech@gmail.
 ### step 2 :
 - Create the instance (connect with database)
 ```php
-    use ODB\DBDatabase;
+    use ODB\DB\Database;
     $db = Database::connect();
 ```
 
@@ -391,7 +391,6 @@ echo $posts->link();
 
 ```
 
-## New V.3.1.0
 
 you can echo out the results directlly that convert 
 the results to json format
@@ -646,7 +645,6 @@ $db->table('users')->alterSchema(['drop', 'full_name'])->alter();
     empty()
 
 
-# New in v 4.1.0
 ### parseWhere(array $cons, $type = "AND")
 ```php
  $con = [
@@ -676,6 +674,24 @@ $db->table('table_name')->
     
 // SELECT * FROM table_name where username='ALI' OR (age<30 OR sex='female AND position='manager')
 ```
+### rawQuery()
+execute raw sql queries
+
+```php
+$sql = 'select name, email from users';
+$query = $db->rawQuery($sql);
+
+
+````
+
+### LastQuery()
+````php
+
+ echo  $db->LastQuery();
+ 
+ ````
+
+
 
 ### lastInsertedId()
 after insert into database you can retrieve last inserted ID
@@ -727,8 +743,6 @@ var_dump($user->paginate());
 DONT FORGET find($id) method ;)
 
 
-## Advanced Usage
- - `COMING SOON`
 
 ### THATS IT :) 
 
@@ -736,75 +750,6 @@ DONT FORGET find($id) method ;)
 
 =============================
 ## Change Log
-
-#### 4.1.0
-* ADD : parseWhere(array $cons, $type = "AND") method
-* ADD : lastInsertedId() method
-* ADD : createOrUpdate($values, $conditionColumn = []) method
-* ADD : findBy($column, $value) method
-* REMOVE: empty() method
-
-### 4.0.0
-* MODIFY : namesace to `ODB\DB\\Orm`
-* MODIFY : files structure
-
-#### 3.1.0
-* FIX : Duplicate connection
-* ADD : Some methods
-    * each() -> to each all collection values
-    * map()  -> to map all results
-    * all()  -> to get all results
-    * last() -> to get last recored selectedw
-    * filter() -> to filter values
-    * keys() -> to get collection keys
-    * toJson() -> to convert results to json format
-* ADD : convert results to json format when use collection as string automaticlly
-
-#### 3.0.0
-* ADD    : direct update functionality
-* FIX    : dataView method with first method
-* MODIFY : methods chaining technique
-    * select, first, find, paginate NOW return Database Object
-    * but you can use results as array or object
-    * any time you can add ->results() to convert to array or object
-
-#### 2.1.0
-* Add : pagination functionality
-* Add : count method
-* Add : dataView method (to display 'selected results' in table)
-* FIX : in() method
-* FIX : notIn() method
-
-#### 2.0.0
-* ADD : supports multi `drivers`
-    * mysql
-    * PostgreSQL
-    * sqlite
-    * msSql
-    * sybase
-    * Oracle Call Interface (OCI)
-* ADD : multi where
-* ADD : type of where
-* ADD : show query
-* FIX : default constraint
-* ADD : limit function
-* ADD : offset function
-* rebuilt 80% of methods
-* change License terms
-
-#### 1.1.0
-
-* ADD Some Data Definition Language (DDL) functions.
-  * ADD Create New Table 
-  * ADD Drop Table
-  * ADD Alter Table
-    * ADD new Column
-    * Change Column Name
-    * Drop Column
-    * Rename Column
-
-#### 1.0.1
-* FIX first method -> to compatible with PHP V +5.3.0
 
 #### 1.0.0
 * First Release
