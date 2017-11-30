@@ -812,7 +812,7 @@ DONT FORGET find($id) method ;)
 
 =============================
 # License
-### MIT
+### APACHE
 
 
 
